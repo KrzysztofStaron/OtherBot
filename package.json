@@ -1,0 +1,19 @@
+{
+  "name": "otherbot",
+  "version": "0.0.1",
+  "description": "other world discord server manager: https://discord.gg/ffQupgAaeU ",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KrzysztofStaron/OtherBot.git"
+  },
+  "author": "Krzysztof Staroń",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KrzysztofStaron/OtherBot/issues"
+  },
+  "homepage": "https://github.com/KrzysztofStaron/OtherBot#readme"
+}
