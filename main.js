@@ -6,20 +6,20 @@ const config = require("./config.json")
 
 client.on('ready', () => {
   console.log("yes");
-  if (!fs.existsSync("data/user.json")) {
-    fs.writeFileSync('data/user.json', "{}");
+  if (!fs.existsSync("data/users.json")) {
+    fs.writeFileSync('data/users.json', "{}");
   }
 });
 
 client.on('messageCreate', (msg) => {
-  console.log(JSON.parse(fs.readFileSync("data/users.json")))
-  let args = msg.content.split(" ");
-  if (msg.author.bot || args[0] != config.prefix) return;
-
-  console.log(args[1] == "daily");
+  if (msg.author.bot) return;
 
   const tryCreateUserData = require("./tryCreateUserData.js");
   tryCreateUserData(msg);
+
+  let args = msg.content.split(" ");
+  if (args[0] != config.prefix) return;
+  console.log(args[1] == "daily");
 
   switch (args[1]) {
     case "daily":
