@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/KrzysztofStaron/OtherBot/issues"
   },
-  "homepage": "https://github.com/KrzysztofStaron/OtherBot#readme"
+  "homepage": "https://github.com/KrzysztofStaron/OtherBot#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0"
+  }
 }
