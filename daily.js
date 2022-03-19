@@ -7,7 +7,6 @@ function randomRange(num) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-
 module.exports = {
   "daily": function(msg) {
     let data = functions.getUsersData();
