@@ -14,8 +14,8 @@ client.on('ready', () => {
 client.on('messageCreate', (msg) => {
   if (msg.author.bot) return;
 
-  const tryCreateUserData = require("./tryCreateUserData.js");
-  tryCreateUserData(msg);
+  const functions = require("./functions.js");
+  functions.fixUser(msg);
 
   let args = msg.content.split(" ");
   if (args[0] != config.prefix) return;
