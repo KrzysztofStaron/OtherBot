@@ -4,7 +4,7 @@
   "description": "other world discord server manager: https://discord.gg/ffQupgAaeU ",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "setup": "setup.js"
   },
   "repository": {
     "type": "git",

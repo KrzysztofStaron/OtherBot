@@ -7,13 +7,11 @@ const Discord = require('discord.js');
 
 const functions = require('./functions');
 
-if (!fs.existsSync("config.json")) fs.writeFileSync('config.json', JSON.stringify(require("./objects.json").config));
 var config = require("./config.json");
 
 client.on('ready', () => {
   console.log("Logged");
   require("./preload").preload();
-  if (!fs.existsSync("data/users.json")) fs.writeFileSync('data/users.json', "{}");
 });
 
 client.on('messageCreate', (msg) => {
