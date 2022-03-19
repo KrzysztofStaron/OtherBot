@@ -8,9 +8,10 @@ module.exports = {
     let data = JSON.parse(fs.readFileSync("data/users.json"));
     let user = data[msg.author.id] || {};
 
-    for (var propety in JSON.parse(fs.readFileSync("objects.json")).user) {
+    const userObj = JSON.parse(fs.readFileSync("objects.json")).user;
+    for (var propety in userObj) {
       if (!user.hasOwnProperty(propety)) {
-        user[propety] = JSON.parse(fs.readFileSync("objects.json")).user[propety];
+        user[propety] = userObj[propety];
       }
     }
     data[msg.author.id] = user;

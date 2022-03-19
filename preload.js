@@ -1,3 +1,5 @@
+// this script is called after the bot logs in
+
 var schedule = require('node-schedule');
 const functions = require("./functions");
 const fs = require("fs");
@@ -16,6 +18,7 @@ const reseting = () => {
 }
 
 module.exports = {
+  // don't forget to add calling
   "preload": function(){
     reseting();
   }
