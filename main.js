@@ -7,7 +7,6 @@ if (!fs.existsSync("config.json")) {
   fs.writeFileSync('config.json', JSON.stringify(require("./objects.json").config));
 }
 var config = require("./config.json");
-const cron = require("cron");
 
 client.on('ready', () => {
   console.log("yes");
@@ -25,12 +24,13 @@ client.on('messageCreate', (msg) => {
   require("./functions").fixUser(msg);
 
   let args = msg.content.split(" ");
-  if (args[0] != config.prefix) return;
+  if (!args[0].startsWith(config.prefix)) return;
+  args[0] = args[0].substring(1);
 
-  switch (args[1]) {
+  switch (args[0]) {
     case "daily":
       const daily = require("./daily");
-      daily(msg, args);
+      daily(msg);
       break;
     default:
 

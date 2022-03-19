@@ -6,6 +6,7 @@
   "config": {
     "token": "",
     "prefix": "$",
+    "coin": ":coin:",
     "daily": {
       "base": 10,
       "random": 2
