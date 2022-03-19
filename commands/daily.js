@@ -1,4 +1,4 @@
-const functions = require("./functions");
+const functions = require("../functions");
 const fs = require('fs');
 
 function randomRange(num) {
@@ -22,7 +22,7 @@ module.exports = {
     if (user.claimedDate == today){
       msg.reply(`Wait until tomorrow`);
     } else {
-      const config = require("./config.json");
+      const config = require("../config.json");
       const add = config.daily.base + randomRange(config.daily.random);
 
       user.money += add;
