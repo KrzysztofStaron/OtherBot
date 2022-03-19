@@ -2,7 +2,11 @@ const fs = require("fs");
 const {Client, Intents, MessageEmbed } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const Discord = require('discord.js');
-const config = require("./config.json")
+
+if (!fs.existsSync("config.json")) {
+  fs.writeFileSync('config.json', JSON.stringify(require("./objects.json").config));
+}
+var config = require("./config.json");
 const cron = require("cron");
 
 client.on('ready', () => {
@@ -10,8 +14,8 @@ client.on('ready', () => {
   if (!fs.existsSync("data/users.json")) {
     fs.writeFileSync('data/users.json', "{}");
   }
-  if (!fs.existsSync("config.json")) {
-    fs.writeFileSync('config.json', JSON.stringify(require("./objects.json").config));
+ else {
+    config = require("./config.json")
   }
 });
 
