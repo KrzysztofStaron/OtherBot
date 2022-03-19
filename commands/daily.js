@@ -26,7 +26,7 @@ module.exports = {
       const add = config.daily.base + randomRange(config.daily.random);
 
       user.money += add;
-      msg.reply(`You get: **${add}${config.coin}** , now has: **${user.money}${config.coin}**`);
+      msg.reply(`You get: **${add} ${config.coin}** , now has: **${user.money} ${config.coin}**`);
 
       user.claimedDate = today;
       data[msg.author.id] = user;
