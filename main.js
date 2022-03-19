@@ -27,7 +27,7 @@ client.on('messageCreate', (msg) => {
 
   switch (args[0]) {
     case "daily":
-      require("./daily").daily(msg);
+      require("./commands/daily").daily(msg);
       break;
     default:
 
