@@ -1,3 +1,8 @@
 # OtherBot
 
-run: ```node setup```
+how to run:
+```
+  npm install
+  node setup
+  node .
+```
