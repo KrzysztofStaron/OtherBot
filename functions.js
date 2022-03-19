@@ -6,15 +6,15 @@ module.exports = {
   },
   "fixUser": function(msg) {
     let data = JSON.parse(fs.readFileSync("data/users.json"));
-    let user = data[msg.author.id];
-    const userObj = JSON.parse(fs.readFileSync("objects.json"));
+    let user = data[msg.author.id] || {};
 
-    for (var propety in userObj) {
+    for (var propety in JSON.parse(fs.readFileSync("objects.json"))) {
       if (!user.hasOwnProperty(propety)) {
-        user[propety] = userObj[propety];
+        user[propety] = JSON.parse(fs.readFileSync("objects.json"))[propety];
       }
     }
     data[msg.author.id] = user;
     fs.writeFileSync('data/users.json', JSON.stringify(data));
+    console.log("duck")
   }
 }
