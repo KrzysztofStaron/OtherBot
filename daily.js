@@ -19,7 +19,7 @@ module.exports = {
 
     today = mm + '/' + dd + '/' + yyyy;
 
-    if (user.dailyClaimed == today){
+    if (user.claimedDate == today){
       msg.reply(`Wait until tomorrow`);
     } else {
       const config = require("./config.json");
@@ -28,7 +28,7 @@ module.exports = {
       user.money += add;
       msg.reply(`You get: **${add}${config.coin}** , now has: **${user.money}${config.coin}**`);
 
-      user.dailyClaimed = today;
+      user.claimedDate = today;
       data[msg.author.id] = user;
       fs.writeFileSync('data/users.json', JSON.stringify(data));
     }
