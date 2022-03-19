@@ -12,7 +12,7 @@ var config = require("./config.json");
 
 client.on('ready', () => {
   console.log("Logged");
-  require("./preload").reseting();
+  require("./preload").preload();
   if (!fs.existsSync("data/users.json")) fs.writeFileSync('data/users.json', "{}");
 });
 
