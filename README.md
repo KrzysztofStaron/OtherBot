@@ -1,1 +1,3 @@
 # OtherBot
+
+run: ```node setup```
