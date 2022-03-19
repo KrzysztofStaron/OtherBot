@@ -1,6 +1,6 @@
 {
   "name": "otherbot",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "other world discord server manager: https://discord.gg/ffQupgAaeU ",
   "main": "main.js",
   "scripts": {
