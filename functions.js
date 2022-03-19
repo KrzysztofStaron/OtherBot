@@ -11,4 +11,5 @@ module.exports = {
 
       fs.writeFileSync('data/users.json', JSON.stringify(data));
     }
+  }
 }

@@ -14,7 +14,7 @@ client.on('ready', () => {
 client.on('messageCreate', (msg) => {
   if (msg.author.bot) return;
 
-  const functions = require("./functions.js");
+  const functions = require("./functions");
   functions.fixUser(msg);
 
   let args = msg.content.split(" ");
