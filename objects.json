@@ -2,5 +2,13 @@
   "user": {
     "money": 0,
     "dailyClaimed": false
+  },
+  "config": {
+    "token": "",
+    "prefix": "$",
+    "daily": {
+      "base": 10,
+      "random": 2
+    }
   }
 }

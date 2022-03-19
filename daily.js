@@ -1,3 +1,7 @@
+const functions = require("./functions");
+
 module.exports = function(msg, args) {
-  msg.reply(`daily`);
+  let user = functions.getUsersData()[msg.author.id];
+  user.dailyClaimed = true;
+  msg.reply()
 }

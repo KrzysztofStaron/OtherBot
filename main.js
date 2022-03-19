@@ -11,19 +11,17 @@ client.on('ready', () => {
     fs.writeFileSync('data/users.json', "{}");
   }
   if (!fs.existsSync("config.json")) {
-    fs.writeFileSync('config.json', '{"token: "", prefix: "$"}');
+    fs.writeFileSync('config.json', JSON.stringify(require("./objects.json").config));
   }
 });
 
 client.on('messageCreate', (msg) => {
   if (msg.author.bot) return;
 
-  const functions = require("./functions");
-  functions.fixUser(msg);
+  require("./functions").fixUser(msg);
 
   let args = msg.content.split(" ");
   if (args[0] != config.prefix) return;
-  console.log(args[1] == "daily");
 
   switch (args[1]) {
     case "daily":
