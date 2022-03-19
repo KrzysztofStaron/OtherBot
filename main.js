@@ -9,6 +9,9 @@ client.on('ready', () => {
   if (!fs.existsSync("data/users.json")) {
     fs.writeFileSync('data/users.json', "{}");
   }
+  if (!fs.existsSync("config.json")) {
+    fs.writeFileSync('config.json', '{"token: "", prefix: "$"}');
+  }
 });
 
 client.on('messageCreate', (msg) => {
