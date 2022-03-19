@@ -15,6 +15,5 @@ module.exports = {
     }
     data[msg.author.id] = user;
     fs.writeFileSync('data/users.json', JSON.stringify(data));
-    console.log("duck")
   }
 }
