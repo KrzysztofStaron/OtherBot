@@ -1,7 +1,11 @@
-const functions = require();
+const functions = require("../functions");
 
 module.exports = {
   "ball": function(msg, args) {
-    msg.reply("ball");
+    var author = msg.author.id
+
+    var money = functions.getUsersData()[author].money;
+    var coin = require("../config.json").coin;
+    msg.reply(`You have: **${money}** ${coin}`);
   }
 }
