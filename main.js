@@ -27,6 +27,9 @@ client.on('messageCreate', (msg) => {
     case "daily":
       require("./commands/daily").daily(msg);
       break;
+    case "ball":
+      require("./commands/ball").ball(msg, args);
+      break;
     default:
 
   }
