@@ -1,7 +1,7 @@
 {
   "user": {
     "money": 0,
-    "dailyClaimed": false
+    "claimedDate": ""
   },
   "config": {
     "token": "",

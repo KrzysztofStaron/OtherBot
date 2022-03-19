@@ -12,17 +12,25 @@ module.exports = {
     let data = functions.getUsersData();
     let user = data[msg.author.id];
 
-    if (user.dailyClaimed){
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+
+    today = mm + '/' + dd + '/' + yyyy;
+
+    if (user.dailyClaimed == today){
       msg.reply(`Wait until tomorrow`);
-      return;
+    } else {
+      const config = require("./config.json");
+      const add = config.daily.base + randomRange(config.daily.random);
+
+      user.money += add;
+      msg.reply(`You get: **${add}${config.coin}** , now has: **${user.money}${config.coin}**`);
+
+      user.dailyClaimed = today;
+      data[msg.author.id] = user;
+      fs.writeFileSync('data/users.json', JSON.stringify(data));
     }
-    const config = require("./config.json");
-    const add = config.daily.base + randomRange(config.daily.random);
-
-    user.money += add;
-    msg.reply(`You get: **${add}${config.coin}** , now has: **${user.money}${config.coin}**`);
-
-    user.dailyClaimed = true;
-    fs.writeFileSync('data/users.json', JSON.stringify(data));
   }
 }
