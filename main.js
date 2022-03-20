@@ -23,7 +23,7 @@ client.on('messageCreate', (msg) => {
   if (!args[0].startsWith(config.prefix)) return;
   args[0] = args[0].substring(1);
 
-  switch (args[0]) {
+  switch (args[0].toLowerCase()) {
     case "daily":
       require("./commands/daily").daily(msg);
       break;
