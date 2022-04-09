@@ -3,6 +3,10 @@
 module.exports = {
   // don't forget to add calling
   "preload": function(){
-    // funtions calls
+    onLog();
   }
+}
+
+function onLog(){
+  console.log("Logged");
 }

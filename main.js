@@ -10,7 +10,6 @@ const functions = require('./functions');
 var config = require("./config.json");
 
 client.on('ready', () => {
-  console.log("Logged");
   require("./preload").preload();
 });
 
