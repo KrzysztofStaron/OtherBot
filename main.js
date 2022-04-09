@@ -32,9 +32,15 @@ client.on('messageCreate', (msg) => {
     case "give":
       require("./commands/give").give(msg, args);
       break;
-    default:
-
   }
+
+  // root commends
+  switch (args[0].toLowerCase()) {
+    case "edit":
+      require("./commands/edit").edit(msg, args);
+      break;
+  }
+
 });
 
 client.login(config.token);
