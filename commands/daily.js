@@ -12,6 +12,7 @@ module.exports = {
     let data = functions.getUsersData();
     let user = data[msg.author.id];
 
+    // generating a date
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0');
