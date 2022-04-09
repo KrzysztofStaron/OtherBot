@@ -30,6 +30,9 @@ client.on('messageCreate', (msg) => {
     case "bal":
       require("./commands/bal").bal(msg);
       break;
+    case "give":
+      require("./commands/give").give(msg);
+      break;
     default:
 
   }

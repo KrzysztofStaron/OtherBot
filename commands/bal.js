@@ -1,7 +1,7 @@
 const functions = require("../functions");
 
 module.exports = {
-  "bal": function(msg, args) {
+  "bal": function(msg) {
     var author = msg.mentions.users.first() || msg.author;
 
     var money = functions.getUsersData()[author.id].money;
