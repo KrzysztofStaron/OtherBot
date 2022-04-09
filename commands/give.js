@@ -8,7 +8,7 @@ module.exports = {
 
     if (args.length != 3) {
       msg.reply("$give @user amount" + args.length)
-    } else if (giveTo.bpt) {
+    } else if (giveTo.bot) {
       msg.reply("you can't give money to bot")
     } else if (!parseInt(args[2])){
       msg.reply("amount must be a number");
