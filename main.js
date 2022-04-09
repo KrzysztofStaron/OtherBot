@@ -31,7 +31,7 @@ client.on('messageCreate', (msg) => {
       require("./commands/bal").bal(msg);
       break;
     case "give":
-      require("./commands/give").give(msg);
+      require("./commands/give").give(msg, args);
       break;
     default:
 
