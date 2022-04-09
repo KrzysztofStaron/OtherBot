@@ -17,7 +17,7 @@ module.exports = {
     } else {
       data[giveTo.id].money += parseInt(args[2]);
       data[msg.author.id].money -= parseInt(args[2]);
-      msg.reply(`From ${msg.author.username} To: ${giveTo.username} Amount: ${parseInt(args[2])}`);
+      msg.reply(`From: **${msg.author.username}** To: **${giveTo.username}** Amount: **${parseInt(args[2])}**`);
       fs.writeFileSync('data/users.json', JSON.stringify(data));
     }
   }
