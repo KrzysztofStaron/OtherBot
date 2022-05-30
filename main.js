@@ -38,6 +38,7 @@ client.on('messageCreate', (msg) => {
   switch (args[0].toLowerCase()) {
     case "edit":
       require("./commands/edit").edit(msg, args);
+      config = require("./config.json");
       break;
   }
 
